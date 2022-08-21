@@ -14,7 +14,7 @@ module.exports = () => {
       install: './src/js/install.js'
     },
     output: {
-      filename: '[name].bundle.js',
+      filename: '[name][contenthash].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
@@ -23,8 +23,18 @@ module.exports = () => {
 
     module: {
       rules: [
-        
+        {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+        }
       ],
     },
+    plugins:[
+      new HtmlWebpackPlugin({
+        title: 'Webpack App',
+        filename: 'index.html',
+        template: 'index.html'
+      })
+    ]
   };
 };

@@ -36,7 +36,7 @@ if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
 
 if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
   // register workbox service worker
-  navigator.serviceWorker.register("service-worker.js").then(
+  navigator.serviceWorker.register("/src-sw.js").then(
     (registration) => {
       console.log("Service worker registration succeeded:", registration);
     },

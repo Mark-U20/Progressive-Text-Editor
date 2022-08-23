@@ -38,6 +38,9 @@ const plugins = [
 
   }),
   new GenerateSW(),
+  new InjectManifest({
+    swSrc: './src-sw.js',
+  })
 
 ]
 // TODO: Add CSS loaders and babel to webpack.

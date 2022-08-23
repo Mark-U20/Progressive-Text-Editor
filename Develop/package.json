@@ -5,12 +5,13 @@
   "main": "server.js",
   "scripts": {
     "start:dev": "concurrently \"cd client && npm run dev\" \"cd server && nodemon server.js\"",
-    "start": "",
     "server": "",
     "build": "",
     "install": "",
     "client": "",
-    "serve": "concurrently \"cd client && npm run build\" \"cd server && npm start\""
+    "serve": "concurrently \"cd client && npm run build\" \"cd server && npm start\"",
+    "start": "node server.js", 
+    "heroku-postbuild": "webpack -p" 
   },
   "keywords": [],
   "author": "",
